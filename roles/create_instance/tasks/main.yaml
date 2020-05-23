@@ -1,6 +1,6 @@
 - name: Create the ELB only listening over port 80
   ec2_elb_lb:
-    name: "{{ ELBNAME }}"
+    #name: "{{ ELBNAME }}"
     state: present
     region: us-east-2
     zones:
@@ -16,7 +16,7 @@
   ec2:
     instance_type: t2.micro
     image: ami-07c1207a9d40bc3bd
-    user_data: "{{ USERDATA }}"
+    #user_data: "{{ USERDATA }}"
     region: us-east-2
     group_id:
       - sg-02c2bd48bf323744e
@@ -24,10 +24,10 @@
     wait: yes
     instance_tags:
       Name: web_server
-      application: "{{ application }}"
+      #application: "{{ application }}"
     exact_count: 2
     count_tag:
-      application: "{{ application }}"
+      #application: "{{ application }}"
   register: ec2_instances
 
 - name: Wait for servers to come online
