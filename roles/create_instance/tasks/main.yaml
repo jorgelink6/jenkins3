@@ -23,7 +23,7 @@
       - sg-03a652d6e72236c00
     wait: yes
     instance_tags:
-      Name: web_server
+      Name: web_server_Green
       application: "{{ application }}"
     exact_count: 2
     count_tag:
